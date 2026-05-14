@@ -120,8 +120,9 @@ PRODUCT_ENFORCE_VINTF_MANIFEST := true
 TW_USE_LEGACY_BATTERY_SERVICES := true
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone36/temp
 
-# Vendor Modules
-TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/recovery/root/lib/modules)\")
+# Just source the load list from your in-tree modules.load.recovery
+BOARD_RECOVERY_KERNEL_MODULES_LOAD := \
+    $(shell cat $(LOCAL_PATH)/recovery/root/lib/modules/modules.load.recovery))
 
 # Samsung
 TW_NO_REBOOT_BOOTLOADER := true

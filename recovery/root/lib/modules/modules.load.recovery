@@ -407,3 +407,4 @@ vibrator_vib_info.ko
 sec_vibrator.ko
 sec_thermistor.ko
 cpufreq_limit.ko
+nt36xxx_spi.ko

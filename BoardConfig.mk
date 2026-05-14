@@ -18,9 +18,6 @@ TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := cortex-a55
 
-# APEX
-DEXPREOPT_GENERATE_APEX_IMAGE := true
-
 # Bootloader
 BOARD_VENDOR := samsung
 TARGET_SOC := mt6835
@@ -32,7 +29,6 @@ TARGET_BOARD_PLATFORM := mt6835
 TARGET_CPU_SMP := true
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
-TARGET_USES_64_BIT_BINDER := true
 
 # Display
 TW_THEME := portrait_hdpi
@@ -42,8 +38,8 @@ TARGET_SCREEN_WIDTH := 1600
 TW_MAX_BRIGHTNESS := 306
 TW_DEFAULT_BRIGHTNESS := 150
 TW_FRAMERATE := 60
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TW_BRIGHTNESS_PATH := "/sys/devices/platform/panel_drv_0/backlight/panel/brightness"
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+TW_BRIGHTNESS_PATH := /sys/devices/platform/panel_drv_0/backlight/panel/brightness
 
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true
@@ -75,7 +71,7 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
 BOARD_SUPER_PARTITION_SIZE := 9126805504 # TODO: Fix hardcoded value
 BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
-BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := system system system vendor product odm system_ext
+BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor product odm system_ext
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 
 # System as root
@@ -114,7 +110,7 @@ TW_INCLUDE_LPTOOLS := true
 TW_EXCLUDE_APEX := true
 TW_NO_SCREEN_BLANK := true
 RECOVERY_SDCARD_ON_DATA := true
-TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_INPUT_BLACKLIST := hbtp_vm
 TW_USE_TOOLBOX := true
 TW_NO_BIND_SYSTEM := true
 TW_EXTRA_LANGUAGES := true
@@ -122,7 +118,7 @@ TW_DEFAULT_LANGUAGE := ja
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
 TW_USE_LEGACY_BATTERY_SERVICES := true
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone36/temp"
+TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone36/temp
 
 # Vendor Modules
 TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/recovery/root/lib/modules)\")
@@ -135,9 +131,9 @@ TW_INCLUDE_FASTBOOTD := true
 
 # Status Bar UI
 TW_STATUS_ICONS_ALIGN := center
-TW_CUSTOM_CPU_POS := "50"
-TW_CUSTOM_CLOCK_POS := "300"
-TW_CUSTOM_BATTERY_POS := "750"
+TW_CUSTOM_CPU_POS := 50
+TW_CUSTOM_CLOCK_POS := 300
+TW_CUSTOM_BATTERY_POS := 750
 
 # Props
 TW_INCLUDE_LIBRESETPROP := true
@@ -155,4 +151,4 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_USE_NEW_MINADBD := true
 
 # Version
-TW_DEVICE_VERSION := SavedByLight
+TW_DEVICE_VERSION := SavedByLight Beta

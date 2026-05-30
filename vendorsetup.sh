@@ -75,6 +75,8 @@ export FOX_RECOVERY_INSTALL_PARTITION=/dev/block/by-name/recovery
 export FOX_RECOVERY_SYSTEM_PARTITION=/dev/block/mapper/system
 export FOX_RECOVERY_VENDOR_PARTITION=/dev/block/mapper/vendor
 export FOX_TARGET_DEVICES="a25ex"
+export OF_NO_KEYMASTER_VER_4X=1
+export OF_USE_LEGACY_BATTERY_SERVICES=1
 
 # R12 build vars
 export FOX_R12=1

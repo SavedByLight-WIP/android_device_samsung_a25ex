@@ -22,3 +22,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     fastbootd
+
+TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
+    $(LOCAL_PATH)/recovery/root/vendor/lib64/android.hardware.security.keymint-V1-ndk.so \
+    $(LOCAL_PATH)/recovery/root/vendor/lib64/android.hardware.security.keymint-V2-ndk.so \
+    $(LOCAL_PATH)/recovery/root/vendor/lib64/android.hardware.security.keymint-V3-ndk.so \
+    $(LOCAL_PATH)/recovery/root/vendor/lib64/libhermes.so \
+    $(LOCAL_PATH)/recovery/root/vendor/lib64/libskeymint10device.so \
+    $(LOCAL_PATH)/recovery/root/vendor/lib64/libskeymint_cli.so \
+    $(LOCAL_PATH)/recovery/root/vendor/lib64/libsecril-client.so \
+    $(LOCAL_PATH)/recovery/root/vendor/lib64/libteecl.so \
+    $(LOCAL_PATH)/recovery/root/vendor/lib64/libTEECommon.so \
+    $(LOCAL_PATH)/recovery/root/vendor/lib64/libuuid.so \
+    $(LOCAL_PATH)/recovery/root/vendor/lib64/vendor.samsung.hardware.keymint-V2-ndk.so \
+    $(LOCAL_PATH)/recovery/root/vendor/lib64/vendor.samsung.hardware.keymint-V3-ndk.so 
